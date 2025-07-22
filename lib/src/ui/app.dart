@@ -1,6 +1,5 @@
 import 'package:deep_river_soft/core/theme/app_theme.dart';
-import 'package:deep_river_soft/src/ui/screens/splash_screen.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:deep_river_soft/src/ui/screens/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -24,21 +23,11 @@ class _AppViewState extends State<AppView> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Live Matches',
+      title: 'DeepRiver Soft Betting',
       theme: appTheme,
       debugShowCheckedModeBanner: false,
       initialRoute: SplashScreen.path,
-
-      onGenerateRoute: (RouteSettings settings) {
-        return switch (settings.name) {
-          SplashScreen.path => CupertinoPageRoute(
-            builder: (context) => const SplashScreen(),
-            settings: settings,
-          ),
-
-          _ => null,
-        };
-      },
+      routes: {SplashScreen.path: (context) => const SplashScreen()},
     );
   }
 }

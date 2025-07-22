@@ -1,7 +1,9 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:local_storage/src/local_storage_interface.dart';
 
-abstract final class CacheKeys {}
+abstract final class CacheKeys {
+  static const String selectedOdds = 'selectedOdds';
+}
 
 final class HiveLocalStorage implements LocalStorage {
   late final Box<dynamic> _appBox;
